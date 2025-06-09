@@ -6,7 +6,7 @@ import axios from 'axios';
 import { useRouter } from 'expo-router';
 
 // Make sure this IP is correct for your local network
-const API_BASE_URL = 'http://192.168.1.123:5000/api'; 
+const API_BASE_URL = 'http://45.62.0.139:5000/api'; 
 
 const AddIngredientScreen = () => {
     const router = useRouter();

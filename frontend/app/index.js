@@ -5,7 +5,7 @@ import { FAB, List, Text, Appbar, ActivityIndicator } from 'react-native-paper';
 import axios from 'axios';
 import { useFocusEffect, useRouter } from 'expo-router'; // <-- Import useRouter
 
-const API_BASE_URL = 'http://192.168.1.123:5000/api'; // <-- IMPORTANT: Use your correct local IP
+const API_BASE_URL = 'http://45.62.0.139:5000/api'; // <-- IMPORTANT: Use your correct local IP
 
 const IngredientListScreen = () => { // No more 'navigation' prop
     const router = useRouter(); // <-- Get the router object

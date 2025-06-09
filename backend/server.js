@@ -33,6 +33,11 @@ app.get('/', (req, res) => {
     res.send('Recipe App Backend is running!');
 });
 
+app.use((req, res, next) => {
+  console.log(`[${new Date().toISOString()}] Incoming Request: ${req.method} ${req.originalUrl}`);
+  next(); // Pass the request to the next middleware (like cors, express.json, etc.)
+});
+
 // Start the server
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);

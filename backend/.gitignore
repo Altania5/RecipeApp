@@ -1,0 +1,20 @@
+# Node.js
+node_modules/
+.env
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Expo
+.expo/
+web-build/
+
+# macOS
+.DS_Store
+
+# VS Code
+.vscode/
+
+# Build artifacts (if any are created in root later)
+build/
+dist/
