@@ -4,7 +4,7 @@ import { View, FlatList, StyleSheet, Alert, Image } from 'react-native';
 import { Appbar, Button, Card, Title, Paragraph, ActivityIndicator, Text } from 'react-native-paper';
 import axios from 'axios';
 
-const API_BASE_URL = 'http://10.0.2.2:5000/api'; // Same as in IngredientListScreen
+const API_BASE_URL = 'http://45.62.0.139:5000/api'; // Same as in IngredientListScreen
 
 const RecipeSearchScreen = ({ navigation }) => {
     const [recipes, setRecipes] = useState([]);
