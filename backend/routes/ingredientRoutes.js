@@ -20,6 +20,7 @@ router.get('/', async (req, res) => {
 // @desc    Add a new ingredient
 // @access  Public (for now)
 router.post('/', async (req, res) => {
+    console.log('Received a request to add an ingredient with body:', req.body);
     const { name, quantity, unit } = req.body;
 
     try {

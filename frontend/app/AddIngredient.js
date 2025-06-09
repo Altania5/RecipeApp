@@ -1,12 +1,15 @@
-// RecipeApp/frontend/screens/AddIngredientScreen.js
+// frontend/app/AddIngredient.js
 import React, { useState } from 'react';
 import { View, StyleSheet, Alert } from 'react-native';
-import { TextInput, Button, Appbar } from 'react-native-paper';
+import { TextInput, Button } from 'react-native-paper';
 import axios from 'axios';
+import { useRouter } from 'expo-router';
 
-const API_BASE_URL = 'http://45.62.0.139:5000/api'; // Same as in IngredientListScreen
+// Make sure this IP is correct for your local network
+const API_BASE_URL = 'http://192.168.1.123:5000/api'; 
 
-const AddIngredientScreen = ({ navigation }) => {
+const AddIngredientScreen = () => {
+    const router = useRouter();
     const [name, setName] = useState('');
     const [quantity, setQuantity] = useState('');
     const [unit, setUnit] = useState('');
@@ -30,7 +33,7 @@ const AddIngredientScreen = ({ navigation }) => {
                 unit: unit.trim()
             });
             Alert.alert('Success', 'Ingredient added successfully!');
-            navigation.goBack(); // Go back to the ingredient list
+            router.back(); // Use router to go back to the previous screen
         } catch (error) {
             console.error('Error adding ingredient:', error);
             Alert.alert('Error', 'Could not add ingredient.');
@@ -40,12 +43,8 @@ const AddIngredientScreen = ({ navigation }) => {
     };
 
     return (
+        // The <Appbar.Header> is removed from here. The layout file handles it.
         <View style={styles.container}>
-            <Appbar.Header>
-                <Appbar.BackAction onPress={() => navigation.goBack()} />
-                <Appbar.Content title="Add New Ingredient" />
-            </Appbar.Header>
-
             <View style={styles.content}>
                 <TextInput
                     label="Ingredient Name"
